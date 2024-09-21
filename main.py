@@ -60,7 +60,7 @@ master_layout.addLayout(col2, 80)
 
 main_window.setLayout(master_layout)
 
-working_directory = r"C:\Users\zaboc\Zdenek_Andrew_Bocek_Coding_With_Josh_Photo_Editing_App\main.py"
+working_directory = r"C:\Users\zaboc\Zdenek_Andrew_Bocek_Coding_With_Josh_Photo_Editing_App"
 
 def filter(files, extensions):
     results = []
