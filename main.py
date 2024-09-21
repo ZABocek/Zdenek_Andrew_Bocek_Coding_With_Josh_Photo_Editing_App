@@ -72,12 +72,18 @@ def filter(files, extensions):
 
 def getWorkDirectory():
     global working_directory
-    working_directory = QFileDialog.getExistingDirectory()
-    extensions = ['.jpg', '.jpeg', '.png', '.svg']
-    filenames = filter(os.listdir(working_directory), extensions)
-    file_list.clear()
-    for filename in filenames:
-        file_list.addItem(filename)
+    selected_directory = QFileDialog.getExistingDirectory()
+
+    # Check if the user selected a directory
+    if selected_directory:
+        working_directory = selected_directory
+        extensions = ['.jpg', '.jpeg', '.png', '.svg']
+        filenames = filter(os.listdir(working_directory), extensions)
+        file_list.clear()
+        for filename in filenames:
+            file_list.addItem(filename)
+    else:
+        print("No directory selected!")
         
 class Editor():
     def __init__(self):
